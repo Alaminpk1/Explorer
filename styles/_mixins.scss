@@ -1,0 +1,29 @@
+@use "variables" as v;
+
+@mixin focus-ring {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+@mixin button-reset {
+  appearance: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin below-md {
+  @media (max-width: v.$breakpoint-md) {
+    @content;
+  }
+}

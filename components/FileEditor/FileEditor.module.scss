@@ -1,0 +1,76 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+@use "../../styles/buttons" as b;
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: v.$space-3;
+  padding: v.$space-3 v.$space-4;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: v.$space-3;
+  min-width: 0;
+}
+
+.name {
+  @include m.truncate;
+
+  font-weight: 600;
+}
+
+.badge {
+  flex-shrink: 0;
+  padding: 0.125rem v.$space-2;
+  border-radius: 999px;
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+  font-size: v.$font-sm;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  gap: v.$space-2;
+  flex-shrink: 0;
+}
+
+.secondary {
+  @include b.btn-secondary;
+}
+
+.primary {
+  @include b.btn-primary;
+}
+
+.textarea {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  padding: v.$space-4;
+  border: 0;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+  font-size: v.$font-base;
+  line-height: 1.65;
+  resize: none;
+
+  &:focus-visible {
+    outline: 0;
+    box-shadow: inset 0 0 0 2px var(--color-accent);
+  }
+}

@@ -1,0 +1,13 @@
+.folder,
+.file {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.folder {
+  color: var(--color-accent);
+}
+
+.file {
+  color: var(--color-text-muted);
+}

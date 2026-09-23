@@ -1,0 +1,64 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+@use "../../styles/buttons" as b;
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: v.$space-3;
+  padding: v.$space-3 v.$space-4;
+  border-bottom: 1px solid var(--color-border);
+
+  @include m.below-md {
+    flex-wrap: wrap;
+  }
+}
+
+.search {
+  position: relative;
+  flex: 1;
+  min-width: 10rem;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: v.$space-4;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  height: v.$control-height;
+  padding: 0 v.$space-3 0 2.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: v.$control-radius;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+
+  &:focus-visible {
+    @include m.focus-ring;
+    border-color: var(--color-accent);
+  }
+
+  @include m.below-md {
+    height: v.$control-height-sm;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: v.$space-2;
+  flex-shrink: 0;
+}
+
+.secondary {
+  @include b.btn-secondary;
+}
+
+.primary {
+  @include b.btn-primary;
+}

@@ -1,0 +1,25 @@
+@use "../../styles/variables" as v;
+
+.dialog {
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: v.$radius-lg;
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-panel);
+  width: min(26rem, calc(100vw - #{v.$space-6}));
+
+  &::backdrop {
+    background: rgb(10 12 16 / 45%);
+  }
+}
+
+.inner {
+  padding: v.$space-5;
+}
+
+.title {
+  margin: 0 0 v.$space-4;
+  font-size: v.$font-lg;
+  font-weight: 600;
+}

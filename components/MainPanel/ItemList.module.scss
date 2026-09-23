@@ -1,0 +1,107 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+@use "../../styles/buttons" as b;
+
+.list {
+  margin: 0;
+  padding: v.$space-2;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: v.$space-2;
+  border-radius: v.$radius-md;
+
+  &:hover {
+    background: var(--color-surface-alt);
+  }
+
+  &:hover .rowActions,
+  &:focus-within .rowActions {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.open {
+  @include m.button-reset;
+
+  display: flex;
+  align-items: center;
+  gap: v.$space-3;
+  flex: 1;
+  min-width: 0;
+  padding: v.$space-3;
+  border-radius: v.$radius-md;
+
+  &:focus-visible {
+    @include m.focus-ring;
+  }
+}
+
+.name {
+  @include m.truncate;
+}
+
+.rowActions {
+  display: flex;
+  gap: v.$space-1;
+  padding-right: v.$space-2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s ease;
+
+  // Touch devices have no hover, so never hide these.
+  @media (hover: none) {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.action {
+  @include b.btn-ghost;
+
+  height: 1.75rem;
+  padding: 0 v.$space-2;
+  font-size: v.$font-sm;
+
+  // Small inline button, so btn-base's height does not apply.
+  @include m.below-md {
+    height: 1.75rem;
+  }
+}
+
+.actionDanger {
+  @include b.btn-ghost;
+
+  height: 1.75rem;
+  padding: 0 v.$space-2;
+  font-size: v.$font-sm;
+
+  // Small inline button, so btn-base's height does not apply.
+  @include m.below-md {
+    height: 1.75rem;
+  }
+
+  &:hover:not(:disabled) {
+    background: var(--color-danger-soft);
+    color: var(--color-danger);
+  }
+}
+
+.empty {
+  padding: v.$space-6 v.$space-4;
+  text-align: center;
+}
+
+.emptyTitle {
+  margin: 0 0 v.$space-1;
+  font-weight: 600;
+}
+
+.emptyHint {
+  margin: 0;
+  color: var(--color-text-muted);
+}

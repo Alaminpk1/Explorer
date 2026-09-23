@@ -1,0 +1,47 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+@use "../../styles/buttons" as b;
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  background: var(--color-surface);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: v.$space-2;
+  min-height: 3.25rem;
+  padding: v.$space-2 v.$space-4;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.menuButton {
+  @include b.btn-secondary;
+
+  display: none;
+  flex-shrink: 0;
+
+  @include m.below-md {
+    display: inline-flex;
+  }
+}
+
+.reset {
+  @include b.btn-ghost;
+
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: v.$font-sm;
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}

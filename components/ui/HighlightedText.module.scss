@@ -1,0 +1,8 @@
+// <mark> defaults to black on yellow, which ignores the theme.
+.match {
+  border-radius: 2px;
+  padding: 0 1px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-weight: 600;
+}

@@ -1,0 +1,47 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: v.$sidebar-width;
+  flex-shrink: 0;
+  border-right: 1px solid var(--color-border);
+  background: var(--color-surface);
+  overflow: hidden;
+
+  @include m.below-md {
+    width: 100%;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 3.25rem;
+  padding: 0 v.$space-4;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.heading {
+  font-size: v.$font-sm;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: v.$space-2;
+}
+
+.tree {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

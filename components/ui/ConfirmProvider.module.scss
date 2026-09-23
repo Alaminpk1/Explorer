@@ -1,0 +1,26 @@
+@use "../../styles/variables" as v;
+@use "../../styles/buttons" as b;
+
+.message {
+  margin: 0 0 v.$space-5;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: v.$space-2;
+}
+
+.cancel {
+  @include b.btn-secondary;
+}
+
+.confirm {
+  @include b.btn-primary;
+}
+
+.danger {
+  @include b.btn-danger;
+}
