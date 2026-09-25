@@ -37,8 +37,8 @@ read the URL it prints rather than assuming 3000.
 | Command | What it does |
 | --- | --- |
 | `npm run dev` | Development server, with hot reload |
-| `npm run build` | Production build |
-| `npm start` | Serves the production build (run `build` first) |
+| `npm run build` | Production build, written to `out/` as a static site |
+| `npx serve out` | Serves that build locally (run `build` first) |
 | `npm run lint` | ESLint |
 | `npx tsc --noEmit` | Type check only, no output files |
 
